@@ -17,7 +17,7 @@
 
 
 # Governance Object
-A Governance Object (or "govObject") is a generic structure introduced in Dash Core v12.1 to allow for the creation of Budget Proposals, Triggers, and Watch Dogs. Class inheritance has been utilized to extend this generic object into a "Proposal" which is outlined throughout the remainder of this document. 
+A Governance Object (or "govObject") is a generic structure introduced in Alarmx Core v12.1 to allow for the creation of Budget Proposals, Triggers, and Watch Dogs. Class inheritance has been utilized to extend this generic object into a "Proposal" which is outlined throughout the remainder of this document. 
 
 ### `new GovObject([govObjectData])`
 
@@ -31,11 +31,11 @@ Returns a dataHex representation (see above)
 ####  `fromObject`  
 Allow to create a govObj from a json or stringifiedJSON obj
 ####  `fromString`
-Allow to create a govObj from a hex string
+Allow to create a govObj from an hex string
 ####  `checkedSerialize`
-Return a hex string that can be used in dashd CLI
+Return an hexa string that can be used in alarmxd CLI
 ####  `serialize`
-Return a hex string
+Return an hexa string
 ####  `inspect`
 Returns a representation of the object
 ####  `toBuffer`
@@ -64,7 +64,7 @@ var jsonProposal = {
   payment_address:'yXGeNPQXYFXhLAN1ZKrAjxzzBnZ2JZNKnh',
   payment_amount:10,
   type:1,//In this case, it will cast a proposal
-  url:"http://www.dash.org/proposal/first_proposal"
+  url:"http://www.alarmx.io/proposal/first_proposal"
 };
 
 //Will instantiate the govObject given the json passed as arg for fromObject
@@ -113,9 +113,9 @@ fromString.inspect();
 You could shallowcopy a first govObj into a second one
 
 ```javascript
-proposal.url="http://dash.org/badUrl"
+proposal.url="http://alarmx.io/badUrl"
 var shallowCopyProposal = proposal.shallowCopy();
-proposal.url="http://dash.org/fixedUrl"
+proposal.url="http://alarmx.io/fixedUrl"
 
 console.log(proposal.url!==shallowCopyProposal.url)//return true as it's a copy
 console.log(proposal!==shallowCopyProposal)//return true
@@ -134,9 +134,9 @@ var JSONObject = JSON.parse(fromString.dataHex())[0][1]);
 
 ## GovObject Types:
 
-Each of these types are inherited from govObject allowing the same methods to be callable.
+Each of theses types are inherited from govObject allowing the same methods to be callable.
 
-* Proposal `type:1`: Allow to create a proposal which inherit govObject method and overwrite them when needed
+* Proposal `type:1` : Allow to create a proposal which inherit govObject method and overwrite them when needed
 
 ```javascript
 var jsonProposal = {
@@ -146,7 +146,7 @@ var jsonProposal = {
   payment_address:'yXGeNPQXYFXhLAN1ZKrAjxzzBnZ2JZNKnh',
   payment_amount:10,
   type:1,
-  url:"http://www.dash.org"
+  url:"http://www.alarmx.io"
 };
 
 var proposal = new Proposal();
@@ -155,6 +155,6 @@ proposal = proposal.fromObject(JSON.stringify(jsonProposal));
 
 var shallowCopy = proposal.shallowCopy(); //As proposal inherits govObject
 
-//Return a hex equivalent of the proposal
+//Return an hex equivalent of the proposal
 var hexProposal = proposal.serialize()
 ```

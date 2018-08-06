@@ -1,17 +1,17 @@
 {
-  "name": "bitcore-lib-dash",
-  "main": "./bitcore-lib-dash.min.js",
-  "version": "0.15.3",
-  "homepage": "https://github.com/dashevo/bitcore-lib-dash",
+  "name": "bitcore-lib-alarmx",
+  "main": "./bitcore-lib-alarmx.min.js",
+  "version": "0.15.2",
+  "homepage": "https://github.com/alarmxcore/bitcore-lib-alarmx",
   "authors": [
-    "Dash", "BitPay, Inc."
+    "Alarmx", "BitPay, Inc."
   ],
-  "description": "A pure, powerful core for your Dash project.",
+  "description": "A pure, powerful core for your alarmx project.",
   "moduleType": [
     "globals"
   ],
   "keywords": [
-    "dash",
+    "alarmx",
     "bitcoin",
     "bitcore",
     "btc",
